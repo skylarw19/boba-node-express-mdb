@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const tktksCtrl = require("../controllers/tktks");
+const bobateasCtrl = require("../controllers/bobateas");
 
-router.get("/", tktksCtrl.index);
+router.get("/", bobateasCtrl.index);
 
 module.exports = router;
