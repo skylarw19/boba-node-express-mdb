@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 /// is this supposed to be changed to mongoose.connect(process.env.DATABASE_URL, {}) ?? see connecting atlas lesson
-// mongoose.connect('mongodb://localhost/bobateas', {
+// mongoose.connect('mongodb://localhost/bobastores', {
 //   useNewUrlParser: true, 
 //   useCreateIndex: true, 
 //   useUnifiedTopology: true

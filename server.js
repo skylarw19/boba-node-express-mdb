@@ -9,7 +9,7 @@ const passport = require("passport");
 require('dotenv').config();
 
 const indexRouter = require("./routes/index");
-const bobateasRouter = require("./routes/bobateas");
+const bobastoresRouter = require("./routes/bobastores");
 const usersRouter = require("./routes/users");
 
 require("./config/database");
@@ -35,7 +35,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", indexRouter);
-app.use("/bobateas", bobateasRouter);
+app.use("/bobastores", bobastoresRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
