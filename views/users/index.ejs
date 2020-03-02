@@ -17,6 +17,21 @@
         <% } %>
     </li>
   </ul>
+  <div>
+      <!-- only allows post if user is in db-->
+    <% if (user) { %> 
+        <% if (user._id.equals(user && user._id)) { %>
+            <div>
+            <form action="/users" method="POST">
+                <input type="text" name="text">
+                <button type="submit">Add Fact</button>
+            </form>
+            </div>
+        <% }} %>
+  </div>
+  <div>
+      <%= user.fact %> 
+  </div>
   
 </body>
 </html>
