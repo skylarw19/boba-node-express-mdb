@@ -1,5 +1,5 @@
-<%- include("../partials/header") %>
-<!-- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -8,16 +8,17 @@
   <title>Users</title>
 </head>
 <body>
-  <h1>users</h1> -->
-  <ul>
-    <li>
+  <h1>users</h1>
+  
         <% if (user) { %>
+            <%- include('../partials/nav') %>
             <a href="/logout">Log Out</a>
         <% } else { %>
             <a href="/auth/google">Login with Google</a>
         <% } %>
-    </li>
-  </ul>
+        </nav>
+    
+
   <div>
       <!-- only allows post if user is in db-->
     <% if (user) { %> 
@@ -29,7 +30,7 @@
         <% }} %>
   </div>
   
-<!-- </body>
-</html> -->
+</body>
+</html>
 
-<%- include('../partials/footer') %>
+

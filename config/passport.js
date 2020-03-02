@@ -1,7 +1,7 @@
 //not middleware, just configures Passport
 const passport = require('passport');
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
-const User = require("../models/users");
+const User = require("../models/user");
 
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
