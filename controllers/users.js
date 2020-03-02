@@ -2,7 +2,6 @@ const User = require("../models/users");
 
 module.exports = {
   index,
-  addFact
 };
 
 function index(req, res) {
@@ -10,13 +9,6 @@ function index(req, res) {
     if (err) return next(err);
     res.render("users/index", { 
         users,
-        user: req.user }); //step
+        user: req.user }); //step 9
   });
 }
-
-function addFact(req, res, next) {
-    req.user.facts.push(req.body);
-    req.user.save(function(err) {
-      res.redirect('/users');
-    });
-  }

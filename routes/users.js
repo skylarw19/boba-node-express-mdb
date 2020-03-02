@@ -3,7 +3,6 @@ const router = express.Router();
 const usersCtrl = require("../controllers/users");
 
 router.get("/", usersCtrl.index);
-router.post("/", isLoggedIn, usersCtrl.addFact);
 
  // Insert this middleware for routes that require a logged in user
  function isLoggedIn(req, res, next) {

@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%- include("../partials/header") %>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,7 +8,7 @@
   <title>Users</title>
 </head>
 <body>
-  <h1>users</h1>
+  <h1>users</h1> -->
   <ul>
     <li>
         <% if (user) { %>
@@ -20,16 +21,15 @@
   <div>
       <!-- only allows post if user is in db-->
     <% if (user) { %> 
-        <% if (user._id.equals(user && user._id)) { %>
+        <!-- if loggedin user matches the user it's on -->
+        <% if (user._id.equals(user && user._id)) { %> 
             <div>
-            <form action="/users" method="POST">
-                <input type="text" name="text">
-                <button type="submit">Add Fact</button>
-            </form>
+                <p>user logged in</p>
             </div>
         <% }} %>
   </div>
-
   
-</body>
-</html>
+<!-- </body>
+</html> -->
+
+<%- include('../partials/footer') %>
