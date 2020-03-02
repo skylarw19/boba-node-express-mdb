@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if (!user) { %>
+        <a href="/auth/google">Login with Google</a>
+      <% } else { %>
+        <%- include('../partials/nav') %>
+        <a href="/logout">Log Out</a>
+    </nav>
+
+    <h1>add new store</h1>
+    <form action="/stores" method="POST">
+        <label>Store Name:
+            <input type="text" name="storeName">
+        </label><br>
+        <label>Location:
+            <input type="text" name="location">
+        </label><br>
+        <label>Hours:
+            <input type="text" name="hours">
+        </label><br>
+        <label>Logo:
+            <input type="text" name="logoLink">
+        </label><br>
+        <button type="submit">Add Store</button>
+    </form>
+
+    <!-- end else statment -->
+    <% } %> 
+</body>
+</html>

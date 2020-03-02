@@ -12,3 +12,5 @@ const userSchema = new Schema({
 });
 
 module.exports = mongoose.model("User", userSchema);
+
+//make a bunch of stores that user can pick. and if store doesn't exist yet, then they can add it in.

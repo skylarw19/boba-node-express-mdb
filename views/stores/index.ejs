@@ -7,10 +7,42 @@
   <title>Stores</title>
 </head>
 <body>
-  <h1>List of Stores</h1>
+  <% if (!user) { %>
+    <a href="/auth/google">Login with Google</a>
+  <% } else { %>
+    <%- include('../partials/nav') %>
+    <a href="/logout">Log Out</a>
+  </nav><br>
 
+  <h1>List of Stores</h1><br>
   <form action="/stores/new" method="GET">
     <button type="submit">Add New Store</button>
   </form>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Hours</th>
+      <th>LogoLink</th>
+    </thead>
+    <tbody>
+      <!-- stores is passed from storeCtrl.index -->
+      <% stores.forEach(function(s){ %>
+        <tr>
+          <td><%= s.storeName %> </td>
+          <td><%= s.location %> </td>
+          <td><%= s.hours %> </td>
+          <td><%= s.logoLink %> </td>
+        </tr>
+      <% }) %> 
+    </tbody>
+
+  </table>
+
+
+
+
+  <!-- end else statement for being logged in-->
+  <% } %>
 </body>
 </html>
