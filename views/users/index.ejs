@@ -9,9 +9,10 @@
 </head>
 <body>
   <h1>users</h1>
-  
+
         <% if (user) { %>
             <%- include('../partials/nav') %>
+            <a href="/users/<%=user._id%>/visitedStores">My Visited Stores</a>
             <a href="/logout">Log Out</a>
         <% } else { %>
             <a href="/auth/google">Login with Google</a>

@@ -15,10 +15,10 @@
     <a href="/logout">Log Out</a>
   </nav><br>
 
-  <h1>List of Stores</h1><br>
-  <form action="/stores/new" method="GET">
+  <h1>Visited Stores</h1><br>
+  <!-- <form action="/stores/new" method="GET">
     <button type="submit">Add New Store</button>
-  </form><br>
+  </form><br> -->
   <table>
     <thead>
       <th>Name</th>
@@ -28,23 +28,10 @@
     </thead>
     <tbody>
       <!-- stores is passed from storeCtrl.index -->
-      <% stores.forEach(function(s){ %>
-        <tr>
-          <td><%= s.storeName %> </td>
-          <td><%= s.location %> </td>
-          <td><%= s.city %> </td>
-          <td><%= s.hours %> </td>
-          <td><%= s.logoLink %> </td>
-          <td><form action="/users/<%=user._id%>/visitedStores" method="POST"><button type="submit">Add Store to Visited</button></form></td>
-        </tr>
-      <% }) %> 
+
     </tbody>
 
   </table>
-
-
-
-
   <!-- end else statement for being logged in-->
   <% } %>
 </body>

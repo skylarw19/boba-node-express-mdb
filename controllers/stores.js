@@ -5,7 +5,6 @@ module.exports = {
   showNewPage,
   create
 };
-
 function index(req, res) {
   Store.find({}, function(err, stores) {
     if (err) return next(err);
@@ -14,7 +13,6 @@ function index(req, res) {
       user: req.user });
   });
 }
-
 function showNewPage(req,res){
   Store.find({}, function(err, stores) {
     if (err) return next(err);
@@ -23,7 +21,6 @@ function showNewPage(req,res){
       user: req.user });
   });
 }
-
 function create(req,res){
   console.log(req.body);
   Store.create(req.body, function(err, stores){

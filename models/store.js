@@ -2,8 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const storeSchema = new Schema({
-    storeName: String,
-    location: String,
+    storeName: {type: String, required: true},
+    location: {type: String, required: true},
+    city: {type: String, required: true},
     hours: String,
     logoLink: String,
 });
