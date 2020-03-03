@@ -8,14 +8,21 @@ module.exports={
 }
 function index(req,res){
     res.render("drinks/index", {
-        user: req.user
+        user: req.user,
+        storeId: req.params.storeId
     })
 }
 function newDrink(req,res){
     res.render("drinks/new",{
-        user: req.user
+        user: req.user,
+        storeId: req.params.storeId
     })
 }
 function create(req,res){
-
+    req.body.storeId = storeId;
+    User.findById(req.user, function(err, user){
+        user.visitedStores.findById(storeId, function(err,visitedStore){
+            Drink.create(req.body)
+        })
+    })
 }

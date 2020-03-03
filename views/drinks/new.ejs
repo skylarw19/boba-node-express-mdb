@@ -10,11 +10,12 @@
         <a href="/auth/google">Login with Google</a>
       <% } else { %>
         <%- include('../partials/nav') %>
+        <a href="/users/<%=user._id%>/visitedStores">My Visited Stores</a>
         <a href="/logout">Log Out</a>
     </nav>
 
     <h1>Add new drink</h1>
-    <form action="/stores" method="POST">
+    <form action="/visitedStores/<%=storeId%>/drinks/" method="POST">
         <label>DrinkName:
             <input type="text" name="drinkName">
         </label><br>
