@@ -7,6 +7,10 @@ const visitedStoreSchema = new Schema({
     city: String,
     hours: String,
     logoLink: String,
+    drink: {
+        type: Schema.Types.ObjectId,
+        ref: "Drink"
+    }
 });
 
 const userSchema = new Schema({

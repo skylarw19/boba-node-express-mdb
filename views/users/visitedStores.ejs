@@ -25,15 +25,19 @@
       <th>Location</th>
       <th>City</th>
       <th>Hours</th>
+      <th>Drinks Tried</th>
     </thead>
     <tbody>
       <!-- stores is passed from storeCtrl.index -->
-      <% user.visitedStores.forEach(function(s){ %>
+      <% user.visitedStores.forEach(function(s, idx){ %>
         <tr>
           <td><%= s.storeName %> </td>
           <td><%= s.location %> </td>
           <td><%= s.city %> </td>
           <td><%= s.hours %> </td>
+          <td><form action="/visitedStores/<%=idx%>/drinks" method="GET">
+            <button type="submit">Drinks</button>
+          </form></td>
         </tr>
       <% }) %> 
     </tbody>

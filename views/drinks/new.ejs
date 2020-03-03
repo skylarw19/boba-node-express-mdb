@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if (!user) { %>
+        <a href="/auth/google">Login with Google</a>
+      <% } else { %>
+        <%- include('../partials/nav') %>
+        <a href="/logout">Log Out</a>
+    </nav>
+
+    <h1>Add new drink</h1>
+    <form action="/stores" method="POST">
+        <label>DrinkName:
+            <input type="text" name="drinkName">
+        </label><br>
+        <label>Toppings:
+            <input type="text" name="toppings">
+        </label><br>
+        <label>Ice Level:
+            <input type="text" name="ice">
+        </label><br>
+        <label>Sweetness Level:
+            <input type="text" name="sweetness">
+        </label><br>
+        <label>Rating:
+            <input type="text" name="rating">
+        </label><br>
+        <label>Price:
+            <input type="text" name="price">
+        </label><br>
+        <button type="submit">Add Drink</button>
+    </form>
+
+    <!-- end else statment -->
+    <% } %> 
+</body>
+</html>

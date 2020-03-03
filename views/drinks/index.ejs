@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/main.css" />
+  <title>My Drinks</title>
+</head>
+<body>
+  <% if (!user) { %>
+    <a href="/auth/google">Login with Google</a>
+  <% } else { %>
+    <%- include('../partials/nav') %>
+    <a href="/users/<%=user._id%>/visitedStores">My Visited Stores</a>
+    <a href="/logout">Log Out</a>
+  </nav><br>
+
+  <h1>Drinks tried at this store</h1><br>
+  <form action="/drinks/new" method="GET">
+    <button type="submit">Add New Drink</button>
+  </form><br>
+  
+
+  <!-- end else statement for being logged in-->
+  <% } %>
+</body>
+</html>
