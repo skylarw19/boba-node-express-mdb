@@ -35,7 +35,14 @@
           <td><%= s.city %> </td>
           <td><%= s.hours %> </td>
           <td><%= s.logoLink %> </td>
-          <td><form action="/users/<%=user._id%>/visitedStores" method="POST"><button type="submit">Add Store to Visited</button></form></td>
+          <td><form action="/users/<%=user._id%>/visitedStores" method="POST">
+            <input type="text" hidden name="storeName" value=<%= s.storeName %>>
+            <input type="text" hidden name="location" value=<%= s.location %>>
+            <input type="text" hidden name="city" value=<%= s.city %>>
+            <input type="text" hidden name="hours" value=<%= s.hours %>>
+            <input type="text" hidden name="logoLink" value=<%= s.logoLink%>>
+            <button type="submit">Add Store to Visited</button>
+          </form></td>
         </tr>
       <% }) %> 
     </tbody>

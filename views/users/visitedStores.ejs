@@ -28,9 +28,15 @@
     </thead>
     <tbody>
       <!-- stores is passed from storeCtrl.index -->
-
+      <% user.visitedStores.forEach(function(s){ %>
+        <tr>
+          <td><%= s.storeName %> </td>
+          <td><%= s.location %> </td>
+          <td><%= s.city %> </td>
+          <td><%= s.hours %> </td>
+        </tr>
+      <% }) %> 
     </tbody>
-
   </table>
   <!-- end else statement for being logged in-->
   <% } %>

@@ -13,6 +13,7 @@ function index(req, res) {
   }
 function create(req,res){
     User.findById(req.params.id, function(err,user){
+        console.log(req.body);
         user.visitedStores.push(req.body);
         user.save(function(err){
             res.redirect(`/users/${user._id}/visitedStores`);
