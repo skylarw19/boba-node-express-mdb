@@ -14,10 +14,6 @@ const userSchema = new Schema({
     name: String,
     email: String,
     googleId: String,
-    // store: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "Store"
-    // }
     visitedStores: [visitedStoreSchema]
 });
 

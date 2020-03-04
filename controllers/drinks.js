@@ -3,7 +3,7 @@ const User = require("../models/user");
 
 module.exports={
     index,
-    create,
+    addDrink: create,
     new: newDrink
 }
 function index(req,res){
@@ -19,10 +19,13 @@ function newDrink(req,res){
     })
 }
 function create(req,res){
-    req.body.storeId = storeId;
-    User.findById(req.user, function(err, user){
-        user.visitedStores.findById(storeId, function(err,visitedStore){
-            Drink.create(req.body)
+    storeId = req.params.storeId;
+    Drink.create(req.body, function(err, drink){
+        const store = req.user.visitedStores.id(storeId);
+        store.drinks.push(drink._id);
+        req.user.save(function(err){
+            res.redirect(`/visitedStores/${storeId}/drinks`)
         })
     })
 }
+
