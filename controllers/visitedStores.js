@@ -24,8 +24,6 @@ function create(req,res){
 function deleteStore(req,res){
     storeId = req.params.storeId;
     const store = req.user.visitedStores.id(storeId);
-
-    
     User.findById(req.params.id, function(err,user){
         index = req.user.visitedStores.findIndex(store => store._id == storeId)
         user.visitedStores.splice(index,1)

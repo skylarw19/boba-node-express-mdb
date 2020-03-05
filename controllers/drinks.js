@@ -17,7 +17,10 @@ function index(req,res){
         console.log(store.drinks)
         res.render("drinks/index", {
             user: req.user,
-            storeId: req.params.storeId
+            storeId: storeId,
+            store: store
+            // storeId: req.params.storeId,
+            // store: req.user.visitedStores.id(req.params.storeId)
         })
     });
 
