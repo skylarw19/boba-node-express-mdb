@@ -11,5 +11,6 @@ router.get("/", usersCtrl.index);
   res.redirect('/auth/google');
 }
 
+
 module.exports = router;
 

@@ -15,24 +15,25 @@
         <a href="/logout">Log Out</a>
       </nav><br>
 
-    <h1>add new store</h1>
-    <form action="/stores" method="POST">
+    <h1>Update store</h1>
+    <form action="/users/<%=user._id%>/visitedStores?_method=PUT" method="POST">
+        <input type="text" hidden name="_id" value=<%= store._id %> >
         <label>Store Name:
-            <input type="text" name="storeName">
+            <input type="text" name="storeName" value="<%=store.storeName %> ">
         </label><br>
         <label>Location:
-            <input type="text" name="location">
+            <input type="text" name="location" value="<%=store.location %> ">
         </label><br>
         <label>City:
-            <input type="text" name="city">
+            <input type="text" name="city" value="<%=store.city %> ">
         </label><br>
         <label>Hours:
-            <input type="text" name="hours">
+            <input type="text" name="hours" value="<%= store.hours%> ">
         </label><br>
         <label>Logo:
-            <input type="text" name="logoLink">
+            <input type="text" name="logoLink" value="<%= store.logoLink%> ">
         </label><br>
-        <button type="submit">Add Store</button>
+        <button type="submit">Update Store</button>
     </form>
 
     <!-- end else statment -->

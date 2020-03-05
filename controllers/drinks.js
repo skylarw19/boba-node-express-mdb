@@ -5,7 +5,7 @@ module.exports={
     index,
     addDrink: create,
     new: newDrink,
-
+    
 }
 function index(req,res){
     storeId = req.params.storeId;
@@ -23,7 +23,6 @@ function index(req,res){
             // store: req.user.visitedStores.id(req.params.storeId)
         })
     });
-
     // res.render("drinks/index", {
     //     user: req.user,
     //     storeId: req.params.storeId
@@ -52,16 +51,3 @@ function create(req,res){
     }//)
 //}
 
-
-//req.user.populate("visitedStores.drinks");
-
-// function index(req,res){
-//     Drink.find({}, function(err, drinks){
-//         if(err) return next(err);
-//         res.render("drinks/index", {
-//             user: req.user,
-//             storeId: req.params.storeId,
-//             drinks
-//         })
-//     })
-// }
