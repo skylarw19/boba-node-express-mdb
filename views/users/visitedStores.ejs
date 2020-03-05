@@ -38,7 +38,7 @@
           <td><form action="/visitedStores/<%=s._id%>/drinks" method="GET">
             <button type="submit">Drinks</button>
           </form></td>
-          <td><form action="" method="POST">
+          <td><form action="/users/<%=user._id%>/visitedStores/<%=s._id%>?_method=DELETE" method="POST">
             <button>Delete Store</button>
           </form></td>
         </tr>

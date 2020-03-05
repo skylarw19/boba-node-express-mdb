@@ -1,7 +1,8 @@
 const User = require("../models/user");
 module.exports = {
     index,
-    create
+    create,
+    delete: deleteStore
 }
 function index(req, res) {
     User.find({}, function(err, users) {
@@ -18,5 +19,18 @@ function create(req,res){
         user.save(function(err){
             res.redirect(`/users/${user._id}/visitedStores`);
         })
+    })
+}
+function deleteStore(req,res){
+    storeId = req.params.storeId;
+    const store = req.user.visitedStores.id(storeId);
+
+    
+    User.findById(req.params.id, function(err,user){
+        index = req.user.visitedStores.findIndex(store => store._id == storeId)
+        user.visitedStores.splice(index,1)
+        user.save(function(err){
+            res.redirect(`/users/${user._id}/visitedStores`);
+        })    
     })
 }
