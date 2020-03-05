@@ -31,13 +31,15 @@
       <!-- stores is passed from storeCtrl.index -->
       <% user.visitedStores.forEach(function(s, idx){ %>
         <tr>
-          <td><%= s._id %></td>
           <td><%= s.storeName %> </td>
           <td><%= s.location %> </td>
           <td><%= s.city %> </td>
           <td><%= s.hours %> </td>
           <td><form action="/visitedStores/<%=s._id%>/drinks" method="GET">
             <button type="submit">Drinks</button>
+          </form></td>
+          <td><form action="" method="POST">
+            <button>Delete Store</button>
           </form></td>
         </tr>
       <% }) %> 

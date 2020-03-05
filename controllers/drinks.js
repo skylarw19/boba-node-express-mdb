@@ -8,10 +8,23 @@ module.exports={
 
 }
 function index(req,res){
-    res.render("drinks/index", {
-        user: req.user,
-        storeId: req.params.storeId
-    })
+    storeId = req.params.storeId;
+    const store = req.user.visitedStores.id(storeId);
+    req.user
+    .populate('visitedStores.drinks')
+    .execPopulate(function(err){
+        console.log("index")
+        console.log(store.drinks)
+        res.render("drinks/index", {
+            user: req.user,
+            storeId: req.params.storeId
+        })
+    });
+
+    // res.render("drinks/index", {
+    //     user: req.user,
+    //     storeId: req.params.storeId
+    // })
 }
 function newDrink(req,res){
     res.render("drinks/new",{
@@ -25,16 +38,16 @@ function create(req,res){
     Drink.create(req.body, function(err, drink){
         store.drinks.push(drink._id);
         req.user.save(function(err){
-            req.user
-            .populate('visitedStores.drinks')
-            .execPopulate(function(err){
-                console.log("hello")
-                console.log(store.drinks)
+            // req.user
+            // .populate('visitedStores.drinks')
+            // .execPopulate(function(err){
+            //     console.log("new drink")
+            //     console.log(store.drinks)
                 res.redirect(`/visitedStores/${storeId}/drinks`)
             });
         })  
-    })
-}
+    }//)
+//}
 
 
 //req.user.populate("visitedStores.drinks");

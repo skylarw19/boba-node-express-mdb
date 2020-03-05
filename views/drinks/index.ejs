@@ -27,7 +27,6 @@
       <tbody>
         <%const store = user.visitedStores.id(storeId);%>
         <% store.drinks.forEach(function(d,idx){ %>
-            <td><%=d._id%></td>
             <td><%=d.drinkName%></td>
             <td><%=d.toppings%></td>
             <td><%=d.ice%></td>
