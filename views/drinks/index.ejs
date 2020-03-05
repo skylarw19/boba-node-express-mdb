@@ -14,8 +14,30 @@
     <a href="/users/<%=user._id%>/visitedStores">My Visited Stores</a>
     <a href="/logout">Log Out</a>
   </nav><br>
-
   <h1>Drinks tried at this store</h1><br>
+  <table>
+      <thead>
+          <th>Drink</th>
+          <th>Toppings</th>
+          <th>Ice Level</th>
+          <th>Sweetness Level</th>
+          <th>Rating</th>
+          <th>Price</th>
+      </thead>
+      <tbody>
+        <%const store = user.visitedStores.id(storeId);%>
+        <% store.drinks.forEach(function(d,idx){ %>
+            <td><%=d._id%></td>
+            <td><%=d.drinkName%></td>
+            <td><%=d.toppings%></td>
+            <td><%=d.ice%></td>
+            <td><%=d.sweetness%></td>
+            <td><%=d.rating%></td>
+            <td><%=d.price%></td>
+        <% }) %> 
+      </tbody>
+  </table>
+  <br>
   <form action="/visitedStores/<%=storeId%>/drinks/new" method="GET">
     <button type="submit">Add New Drink</button>
   </form><br>

@@ -4,7 +4,8 @@ const User = require("../models/user");
 module.exports={
     index,
     addDrink: create,
-    new: newDrink
+    new: newDrink,
+
 }
 function index(req,res){
     res.render("drinks/index", {
@@ -20,12 +21,31 @@ function newDrink(req,res){
 }
 function create(req,res){
     storeId = req.params.storeId;
+    const store = req.user.visitedStores.id(storeId);
     Drink.create(req.body, function(err, drink){
-        const store = req.user.visitedStores.id(storeId);
         store.drinks.push(drink._id);
         req.user.save(function(err){
-            res.redirect(`/visitedStores/${storeId}/drinks`)
-        })
+            req.user
+            .populate('visitedStores.drinks')
+            .execPopulate(function(err){
+                console.log("hello")
+                console.log(store.drinks)
+                res.redirect(`/visitedStores/${storeId}/drinks`)
+            });
+        })  
     })
 }
 
+
+//req.user.populate("visitedStores.drinks");
+
+// function index(req,res){
+//     Drink.find({}, function(err, drinks){
+//         if(err) return next(err);
+//         res.render("drinks/index", {
+//             user: req.user,
+//             storeId: req.params.storeId,
+//             drinks
+//         })
+//     })
+// }
