@@ -37,13 +37,13 @@
           <td><%= s.city %> </td>
           <td><%= s.hours %> </td>
           <td><form action="/visitedStores/<%=s._id%>/drinks" method="GET">
-            <button type="submit">Drinks</button>
+            <button type="submit">See Drinks You've Tried!</button>
           </form></td>
           <td><form action="/users/<%=user._id%>/visitedStores/<%=s._id%>" method="GET">
-            <button>Update Store</button>
+            <button>Update</button>
           </form></td>
           <td><form action="/users/<%=user._id%>/visitedStores/<%=s._id%>?_method=DELETE" method="POST">
-            <button>Delete Store</button>
+            <button>Delete</button>
           </form></td>
         </tr>
       <% }) %> 

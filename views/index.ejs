@@ -10,7 +10,11 @@
 <body>
   <nav>
     <a href="/stores" >List of Boba Stores</a>
-    <a href="/auth/google">Login with Google</a>
+    <% if (!user) { %>
+      <a href="/auth/google">Login with Google</a>
+    <% } else { %>
+      <a href="/logout">Log Out</a>
+    <%}%>
   </nav>
   <h1><%= title %></h1>
   <p>Welcome to <%= title %>!<br>Login to start tracking your favorite boba drinks!</p> 

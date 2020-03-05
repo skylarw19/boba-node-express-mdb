@@ -9,8 +9,6 @@
   <title>Users</title>
 </head>
 <body>
-  <h1>users</h1>
-
         <% if (user) { %>
             <%- include('../partials/nav') %>
             <a href="/users/<%=user._id%>/visitedStores">My Visited Stores</a>
@@ -19,19 +17,16 @@
             <a href="/auth/google">Login with Google</a>
         <% } %>
     </nav>
-    
-
   <div>
       <!-- only allows post if user is in db-->
     <% if (user) { %> 
         <!-- if loggedin user matches the user it's on -->
         <% if (user._id.equals(user && user._id)) { %> 
             <div>
-                <p>user logged in</p>
+                <p>Welcome, <%=user.name%>!</p>
             </div>
         <% }} %>
   </div>
-  
 </body>
 </html>
 
