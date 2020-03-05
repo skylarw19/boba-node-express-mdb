@@ -48,15 +48,13 @@ function showUpdatePage(req,res){
     })
 }
 function update(req,res){
-    // console.log("update")
-    // console.log(req.params.id)
-    // console.log(req.user)
+    storeId = req.params.storeId;
+    const store = req.user.visitedStores.id(storeId);
     User.findById(req.params.id, function(err,user){
-        console.log(req.body);
+        req.body._id = store._id;
+        req.body.drinks = store.drinks;
         index = req.user.visitedStores.findIndex(store => store._id == storeId)
-        console.log(user.visitedStores[index])
         user.visitedStores.splice(index,1,req.body)
-        console.log(user.visitedStores[index])
         user.save(function(err){
             res.redirect(`/users/${user._id}/visitedStores`);
         })

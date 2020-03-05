@@ -13,8 +13,8 @@ function index(req,res){
     req.user
     .populate('visitedStores.drinks')
     .execPopulate(function(err){
-        console.log("index")
-        console.log(store.drinks)
+        // console.log("index")
+        // console.log(store.drinks)
         res.render("drinks/index", {
             user: req.user,
             storeId: storeId,

@@ -16,8 +16,7 @@
       </nav><br>
 
     <h1>Update store</h1>
-    <form action="/users/<%=user._id%>/visitedStores?_method=PUT" method="POST">
-        <input type="text" hidden name="_id" value=<%= store._id %> >
+    <form action="/users/<%=user._id%>/visitedStores/<%= store._id %>?_method=PUT" method="POST">
         <label>Store Name:
             <input type="text" name="storeName" value="<%=store.storeName %> ">
         </label><br>
