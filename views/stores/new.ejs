@@ -14,7 +14,7 @@
         <a href="/users/<%=user._id%>/visitedStores">My Visited Stores</a>
         <a href="/logout">Log Out</a>
       </nav><br>
-
+      <% } %> 
     <h1>add new store</h1>
     <form action="/stores" method="POST">
         <label>Store Name:
@@ -34,8 +34,5 @@
         </label><br>
         <button type="submit">Add Store</button>
     </form>
-
-    <!-- end else statment -->
-    <% } %> 
 </body>
 </html>

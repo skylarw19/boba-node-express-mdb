@@ -9,7 +9,6 @@ const visitedStoreSchema = new Schema({
     logoLink: String,
     drinks: [{type: Schema.Types.ObjectId, ref: "Drink"}]
 });
-
 const userSchema = new Schema({
     name: String,
     email: String,

@@ -53,6 +53,7 @@ function update(req,res){
     User.findById(req.params.id, function(err,user){
         req.body._id = store._id;
         req.body.drinks = store.drinks;
+        //store = req.body
         index = req.user.visitedStores.findIndex(store => store._id == storeId)
         user.visitedStores.splice(index,1,req.body)
         user.save(function(err){

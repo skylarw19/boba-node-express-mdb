@@ -13,8 +13,9 @@
     <%- include('../partials/nav') %>
     <a href="/users/<%=user._id%>/visitedStores">My Visited Stores</a>
     <a href="/logout">Log Out</a>
-  </nav><br>
 
+  </nav><br>
+  <% } %>
   <h1>List of Stores</h1><br>
   <form action="/stores/new" method="GET">
     <button type="submit">Add New Store</button>
@@ -35,6 +36,7 @@
           <td><%= s.city %> </td>
           <td><%= s.hours %> </td>
           <td><%= s.logoLink %> </td>
+          <% if (user) { %>
           <td><form action="/users/<%=user._id%>/visitedStores" method="POST">
             <input type="text" hidden name="storeName" value="<%= s.storeName %>">
             <input type="text" hidden name="location" value="<%= s.location %>">
@@ -44,10 +46,11 @@
             <button type="submit">Add Store to Visited</button>
           </form></td>
         </tr>
+        <% }%>
       <% }) %> 
     </tbody>
   </table>
   <!-- end else statement for being logged in-->
-  <% } %>
+
 </body>
 </html>
