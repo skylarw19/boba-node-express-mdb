@@ -10,13 +10,26 @@ body {
   text-align: center;
   margin: auto;
 }
+h1{
+  font-size: 40px;
+  margin: 0px;
+}
 th{
-
-  font-size: 20px;
+  font-size: 30px;
 }
 table{
   margin: auto;
   border-spacing: 10px;
+  font-size: 20px;
+}
+form{
+  font-size: 20px;
+}
+input{
+  font-size: 15px;
+}
+p{
+  font-size: 20px;
 }
 nav{
   background-image: url(https://i.imgur.com/7Am6iw3.jpg);
@@ -26,5 +39,6 @@ nav{
 }
 button{
   border-radius: 5px;
+  font-size: 15px;
 }
 
