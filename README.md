@@ -1,21 +1,22 @@
-# boba-node-express-mdb
-#### Started on: 02-28-2020
-# boba-node-express-mdb
-
 # Boba Drink Tracker
 
 ## Introduction:
 With the popularity of boba drinks (also known as bubble tea or tapioca drinks) rising, addicts all around will need a tool to track which shops they've been to and which drinks they've already tried! Look no further than BobaDrinker!
 
 ## Check out the App:
-[Check out Boba Drinker!](https://skylarw19.github.io/Minesweeper/) 
+[Check out Boba Drinker!](https://boba-drinker.herokuapp.com/) 
+[Trello](https://trello.com/b/L4fEDwVi/boba-node-express-mdb) 
+
 
 ## View of the App:
+Landing Page:
+![Landing Page](public/images/bobadrinker-landing-page.png)
+
 Visited Stores View:
-![Visited Stores View](assets/wireframe.png)
+![Visited Stores View](public/images/bobadrinker-visitedStores-page.png)
 
 Drinks for Each Store:
-![Drinks for Each Store](assets/frozen-minesweeper.png)
+![Drinks for Each Store](public/images/bobadrinker-drinks-page.png)
 
 ## Technologies Implemented:
 JavaScript, CSS, HTML, Node.js, Express, MongoDB/Mongoose, Google OAuth
@@ -36,7 +37,7 @@ Crystal just moved to Austin, Texas. She is intrigued with the possiblity of mix
 - Add personal profile page
 - Allow users to add reviews to each store
 - Show a page with compiled list of all drinks tried
-- Include a "try later" page
+- Include a "drinks to try later" page
 - Include a maps API to allow searching for boba store locations
 - Add page to store personal boba recipes
 - Add mobile responsiveness
