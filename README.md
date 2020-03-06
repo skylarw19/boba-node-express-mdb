@@ -11,7 +11,7 @@ With the popularity of boba drinks (also known as bubble tea or tapioca drinks) 
 
 ## View of the App:
 Landing Page:
-![Landing Page](public/images/bobadrinker-landing-page.png)
+![Landing Page](public/images/bobadrinker-landingpage.png)
 
 Visited Stores View:
 ![Visited Stores View](public/images/bobadrinker-visitedStores-page.png)
