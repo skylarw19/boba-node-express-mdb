@@ -13,20 +13,12 @@ function index(req,res){
     req.user
     .populate('visitedStores.drinks')
     .execPopulate(function(err){
-        // console.log("index")
-        // console.log(store.drinks)
         res.render("drinks/index", {
             user: req.user,
             storeId: storeId,
             store: store
-            // storeId: req.params.storeId,
-            // store: req.user.visitedStores.id(req.params.storeId)
         })
     });
-    // res.render("drinks/index", {
-    //     user: req.user,
-    //     storeId: req.params.storeId
-    // })
 }
 function newDrink(req,res){
     res.render("drinks/new",{
