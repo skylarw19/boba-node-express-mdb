@@ -1,6 +1,6 @@
 const createError = require("http-errors");
 const express = require("express");
-const favicon = require("serve-favicon")
+const favicon = require("serve-favicon");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
@@ -25,7 +25,6 @@ const app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-app.use(favicon(__dirname + '/public/images/favicon.ico'));
 app.use(methodOverride("_method"));
 app.use(logger("dev"));
 app.use(express.json());
@@ -39,6 +38,7 @@ app.use(session({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
 
 app.use("/", indexRouter);
 app.use("/stores", storesRouter);
