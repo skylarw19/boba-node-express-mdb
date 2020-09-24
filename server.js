@@ -30,6 +30,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(session({
   secret:'BobaRocks!',
@@ -38,7 +39,7 @@ app.use(session({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
+
 
 app.use("/", indexRouter);
 app.use("/stores", storesRouter);
@@ -61,5 +62,10 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+const port = process.env.PORT || 3000;
+app.listen(port, function() {
+  console.log(`Express backend services running on port ${port}`)
+})
 
 module.exports = app;
