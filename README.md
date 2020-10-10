@@ -23,7 +23,7 @@ Drinks for Each Store:
 JavaScript, CSS, HTML, Node.js, Express, MongoDB/Mongoose, Google OAuth
 
 ## Credits:
-- Background Image by clipartkey: https://www.clipartkey.com/view/TimRox_cartoon-bubble-tea-transparent-background/
+- Background Image by Neil Sardesai: https://neilsardesai.com/drink-buddies
 - Indie Flower font by Google Fonts
 - Nav Bar background image by evannave: https://www.redbubble.com/people/evannave/shop?ref=artist_title_name
 
